@@ -1,0 +1,10 @@
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\bin\Debug\netcoreapp3.1\SmartAstra.Framework.deps.json
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\bin\Debug\netcoreapp3.1\SmartAstra.Framework.dll
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\bin\Debug\netcoreapp3.1\SmartAstra.Framework.pdb
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.csproj.AssemblyReference.cache
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.AssemblyInfoInputs.cache
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.AssemblyInfo.cs
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.csproj.CoreCompileInputs.cache
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.dll
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Framework\obj\Debug\netcoreapp3.1\SmartAstra.Framework.pdb

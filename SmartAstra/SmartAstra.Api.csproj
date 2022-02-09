@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartAstra.Business\SmartAstra.Business.csproj" />
+    <ProjectReference Include="..\SmartAstra.Dto\SmartAstra.Dto.csproj" />
+    <ProjectReference Include="..\SmartAstra.Framework\SmartAstra.Framework.csproj" />
+  </ItemGroup>
+
+
+</Project>

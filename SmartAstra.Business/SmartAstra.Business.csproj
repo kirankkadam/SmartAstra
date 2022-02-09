@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SmartAstra.Data\SmartAstra.Data.csproj" />
+    <ProjectReference Include="..\SmartAstra.Dto\SmartAstra.Dto.csproj" />
+    <ProjectReference Include="..\SmartAstra.Entities\SmartAstra.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

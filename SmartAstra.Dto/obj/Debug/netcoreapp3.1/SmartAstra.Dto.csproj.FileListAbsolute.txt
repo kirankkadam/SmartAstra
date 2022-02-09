@@ -1,0 +1,13 @@
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\bin\Debug\netcoreapp3.1\SmartAstra.Dto.deps.json
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\bin\Debug\netcoreapp3.1\SmartAstra.Dto.dll
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\bin\Debug\netcoreapp3.1\SmartAstra.Dto.pdb
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\bin\Debug\netcoreapp3.1\SmartAstra.Framework.dll
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\bin\Debug\netcoreapp3.1\SmartAstra.Framework.pdb
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.csproj.AssemblyReference.cache
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.GeneratedMSBuildEditorConfig.editorconfig
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.AssemblyInfoInputs.cache
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.AssemblyInfo.cs
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.csproj.CoreCompileInputs.cache
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.csproj.CopyComplete
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.dll
+F:\Projects\SmartAstra\SmartAstra\SmartAstra.Dto\obj\Debug\netcoreapp3.1\SmartAstra.Dto.pdb
