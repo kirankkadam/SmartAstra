@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmartAstra.Framework.Common;
+using System;
 
 namespace SmartAstra.Framework.Entities.Interfaces
 {
@@ -6,5 +7,8 @@ namespace SmartAstra.Framework.Entities.Interfaces
     {
         Guid Id { get; set; }
         T Result { get; set; }
+        int PageCount { get; set; }
+        Guid RequestId { get; set; }
+        ResponseStatus Status { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartAstra.Entities;
+using SmartAstra.Framework.Entities.Interfaces;
 
 namespace SmartAstra.Api.Controllers
 {
@@ -9,32 +10,33 @@ namespace SmartAstra.Api.Controllers
     {
 
         [HttpGet]
+        [Route("All")]
         public IActionResult GetMessages()
         {
             return Ok();
         }
 
         [HttpGet]
-        [Route("{id}")]
-        public IActionResult GetMessage(int id)
+        public IActionResult GetMessage(IRequest<Message> request)
         {
-            if (id == 0)
+            if (request == null)
             {
-                return BadRequest();
+                return BadRequest(string.Empty);
             }
             return Ok();
         }
 
 
         [HttpPost]
-        [Route("Insert")]
-        public IActionResult Insert(Message message)
+        [Route("Add")]
+        public IActionResult Insert(IRequest<Message> request)
         {
-            if (message == null)
+            if (request == null)
             {
                 return BadRequest();
             }
-            if (string.IsNullOrEmpty(message.Name))
+
+            if (string.IsNullOrEmpty(request.Data.Name))
             {
                 return BadRequest();
             }
@@ -44,17 +46,32 @@ namespace SmartAstra.Api.Controllers
 
         [HttpPut]
         [Route("Update")]
-        public IActionResult Update(Message message)
+        public IActionResult Update(IRequest<Message> request)
         {
-            if (message == null)
+            if (request == null)
             {
                 return BadRequest();
             }
-            if (string.IsNullOrEmpty(message.Name) || message.Id == 0)
+            if (string.IsNullOrEmpty(request.Data.Name) || request.Data.Id == 0)
             {
                 return BadRequest();
             }
 
+            return Ok();
+        }
+
+        [HttpPost]
+        [Route("Send")]
+        public IActionResult SendMessages(IRequest<Message> request)
+        {
+            if (request == null)
+            {
+                return BadRequest();
+            }
+            if (string.IsNullOrEmpty(request.Data.Name) || request.Data.Id == 0)
+            {
+                return BadRequest();
+            }
             return Ok();
         }
     }

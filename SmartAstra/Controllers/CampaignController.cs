@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartAstra.Business;
+using SmartAstra.Dto;
 using SmartAstra.Framework.Controllers;
+using SmartAstra.Framework.Entities.Interfaces;
 
 namespace SmartAstra.Api.Controllers
 {
@@ -16,53 +18,55 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCampaigns()
+        [Route("all")]
+        public IActionResult GetCampaigns(IRequest<Campaign> request)
         {
-            var result = _campaignBusiness.GetAllCampaigns();
+            var result = _campaignBusiness.GetAllCampaigns(request);
             return Ok(result);
         }
 
         [HttpGet]
-        [Route("{Id}")]
-        public IActionResult GetCampaign(int id)
+        public IActionResult GetCampaign(IRequest<Campaign> request)
         {
-            if (id == 0)
+            if (request == null && request.Data.Id == 0)
             {
                 return BadRequest();
             }
-            var result = _campaignBusiness.GetCampaignById(id);
+            var result = _campaignBusiness.GetCampaignById(request.Data.Id);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Insert(Dto.Campaign campaign)
+        [Route("Add")]
+        public IActionResult Insert(IRequest<Campaign> request)
         {
-            if (campaign == null)
+            if (request == null)
             {
                 return BadRequest();
             }
 
-            if (string.IsNullOrEmpty(campaign.Name))
+            if (string.IsNullOrEmpty(request.Data.Name))
             {
                 return BadRequest();
             }
-            var result = _campaignBusiness.AddCampaign(campaign);
+            var result = _campaignBusiness.AddCampaign(request.Data);
             return Ok(result);
         }
 
         [HttpPut]
-        public IActionResult Update(Dto.Campaign campaign)
+        [Route("Update")]
+        public IActionResult Update(IRequest<Campaign> request)
         {
-            if (campaign == null)
+            if (request == null)
             {
                 return BadRequest();
             }
 
-            if (string.IsNullOrEmpty(campaign.Name))
+            if (string.IsNullOrEmpty(request.Data.Name))
             {
                 return BadRequest();
             }
-            var result = _campaignBusiness.UpdateCampaign(campaign);
+            var result = _campaignBusiness.UpdateCampaign(request.Data);
             return Ok(result);
         }
 
