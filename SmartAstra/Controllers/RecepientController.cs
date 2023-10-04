@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartAstra.Entities;
+using SmartAstra.Framework.Entities.Interfaces;
+using System.Collections.Generic;
 
 namespace SmartAstra.Api.Controllers
 {
@@ -11,16 +13,16 @@ namespace SmartAstra.Api.Controllers
         #region Recepient
 
         [HttpGet]
-        public IActionResult GetRecepients()
+        [Route("All")]
+        public IActionResult GetRecepients(IRequest<Recepient> request)
         {
             return Ok();
         }
 
         [HttpGet]
-        [Route("{id}")]
-        public IActionResult GetRecepientById(int id)
+        public IActionResult GetRecepientById(IRequest<Recepient> request)
         {
-            if (id == 0)
+            if (request == null)
             {
                 return BadRequest();
             }
@@ -31,10 +33,10 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Insert/Recepient")]
-        public IActionResult Insert(Recepient recepient)
+        [Route("Add")]
+        public IActionResult Insert(IRequest<Recepient> request)
         {
-            if (recepient == null)
+            if (request == null)
             {
                 return BadRequest();
             }
@@ -44,10 +46,10 @@ namespace SmartAstra.Api.Controllers
 
 
         [HttpPut]
-        [Route("Update/Recepient")]
-        public IActionResult Update(Recepient recepient)
+        [Route("Update")]
+        public IActionResult Update(IRequest<Recepient> request)
         {
-            if (recepient == null || recepient.Id == 0)
+            if (request == null || request.Data.Id == 0)
             {
                 return BadRequest();
             }
@@ -61,7 +63,7 @@ namespace SmartAstra.Api.Controllers
         #region Recepient List
 
         [HttpGet]
-        [Route("List")]
+        [Route("List/All")]
         public IActionResult GetRecepientLists()
         {
             return Ok();
@@ -69,9 +71,9 @@ namespace SmartAstra.Api.Controllers
 
         [HttpGet]
         [Route("List/{id}")]
-        public IActionResult GetRecepientList(int id)
+        public IActionResult GetRecepientList(IRequest<IList<Recepient>> request)
         {
-            if (id == 0)
+            if (request == null || request.Data.Count == 0)
             {
                 return BadRequest();
             }
@@ -80,10 +82,10 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Insert/List")]
-        public IActionResult InsertRecepientList(RecepientList recepientList)
+        [Route("List/Add")]
+        public IActionResult InsertRecepientList(IRequest<IList<Recepient>> request)
         {
-            if (recepientList == null)
+            if (request == null || request.Data.Count == 0)
             {
                 return BadRequest();
             }
@@ -93,10 +95,10 @@ namespace SmartAstra.Api.Controllers
 
 
         [HttpPut]
-        [Route("Update/List")]
-        public IActionResult UpdateRecepientList(RecepientList recepientList)
+        [Route("List/Update")]
+        public IActionResult UpdateRecepientList(IRequest<IList<Recepient>> request)
         {
-            if (recepientList == null || recepientList.Id == 0)
+            if (request == null || request.Data.Count == 0)
             {
                 return BadRequest();
             }

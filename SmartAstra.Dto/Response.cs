@@ -28,6 +28,8 @@ namespace SmartAstra.Dto
         }
 
         public ResponseStatus Status { get; set; }
+        public int PageCount { get; set; }
+        public Guid RequestId { get; set; }
     }
 
 }

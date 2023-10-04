@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartAstra.Business;
 using SmartAstra.Entities;
+using SmartAstra.Framework.Entities.Interfaces;
 
 namespace SmartAstra.Api.Controllers
 {
@@ -15,6 +16,7 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpGet()]
+        [Route("All")]
         public IActionResult GetAllCompanies()
         {
             var result = _companyBusiness.GetCompanies();
@@ -23,21 +25,21 @@ namespace SmartAstra.Api.Controllers
 
 
         [HttpGet()]
-        [Route("{id}")]
-        public IActionResult GetCompany(int id)
+        public IActionResult GetCompany(IRequest<Company> request)
         {
-            if (id == 0)
+            if (request == null)
             {
                 return BadRequest();
             }
-            var result = _companyBusiness.GetCompany(id);
+            var result = _companyBusiness.GetCompany(request.Data.Id);
             return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Add(Company company)
+        [Route("Add")]
+        public IActionResult Add(IRequest<Company> request)
         {
-            if (company == null || string.IsNullOrEmpty(company.Name))
+            if (request == null || string.IsNullOrEmpty(request.Data.Name))
             {
                 return BadRequest();
             }
@@ -46,9 +48,10 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(Company company)
+        [Route("Update")]
+        public IActionResult Update(IRequest<Company> request)
         {
-            if (company == null || string.IsNullOrEmpty(company.Name) || company.Id == 0)
+            if (request == null || string.IsNullOrEmpty(request.Data.Name) || request.Data.Id == 0)
             {
                 return BadRequest();
             }

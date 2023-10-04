@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SmartAstra.Entities;
+using SmartAstra.Framework.Entities.Interfaces;
 
 namespace SmartAstra.Api.Controllers
 {
@@ -9,9 +10,9 @@ namespace SmartAstra.Api.Controllers
     {
         [HttpGet]
         [Route("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(IRequest<User> request)
         {
-            if (id == 0)
+            if (request == null)
             {
                 return BadRequest();
             }
@@ -19,15 +20,17 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetUsers()
+        public IActionResult GetUsers(IRequest<User> request)
         {
             return Ok();
         }
 
         [HttpPost]
-        public IActionResult Insert(User user)
+        public IActionResult Insert(IRequest<User> request)
         {
-            if (user == null)
+            if (request == null || string.IsNullOrEmpty(request.Data.FirstName)
+                || string.IsNullOrEmpty(request.Data.LastName)
+                || string.IsNullOrEmpty(request.Data.Email))
             {
                 return BadRequest();
             }
@@ -35,9 +38,9 @@ namespace SmartAstra.Api.Controllers
         }
 
         [HttpPut]
-        public IActionResult Update(User user)
+        public IActionResult Update(IRequest<User> request)
         {
-            if (user == null || user.Id == 0)
+            if (request == null || request.Data.Id == 0)
             {
                 return BadRequest();
             }

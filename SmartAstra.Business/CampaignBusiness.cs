@@ -4,6 +4,7 @@ using SmartAstra.Dto;
 using SmartAstra.Framework.Common;
 using SmartAstra.Framework.Entities.Interfaces;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SmartAstra.Business
 {
@@ -15,7 +16,7 @@ namespace SmartAstra.Business
             _dbOperations = new Data.Campaign();
         }
 
-        public IResponse<List<Dto.Campaign>> GetAllCampaigns()
+        public IResponse<List<Dto.Campaign>> GetAllCampaigns(IRequest<Campaign> request)
         {
             var results = _dbOperations.GetAll();
             var response = new Response<List<Campaign>>();
